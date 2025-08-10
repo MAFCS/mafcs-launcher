@@ -18,7 +18,7 @@ services:
       context: ./mafcs-ms-gateway
       dockerfile: Dockerfile.dev
     ports:
-      - "${MAFCS_MS_GATEWAY_PORT}:${MAFCS_MS_GATEWAY_PORT}"
+      - "${MS_GATEWAY_PORT}:${MS_GATEWAY_PORT}"
       - "9230:9230"
     volumes:
       - ./mafcs-ms-gateway/src:/usr/src/app/src
@@ -26,7 +26,7 @@ services:
     command: npm run start:debug
     environment:
       - NATS_SERVER=nats://nats-server:4222
-      - PORT=${MAFCS_MS_GATEWAY_PORT}
+      - PORT=${MS_GATEWAY_PORT}
       - NODE_ENV=development
 
   # =============================
@@ -37,7 +37,7 @@ services:
       context: ./mafcs-ms-auth
       dockerfile: Dockerfile.dev
     ports:
-      - "${MAFCS_MS_AUTH_PORT}:${MAFCS_MS_AUTH_PORT}"
+      - "${MS_AUTH_PORT}:${MS_AUTH_PORT}"
       - "9231:9231"
     volumes:
       - ./mafcs-ms-auth/src:/usr/src/app/src
@@ -45,7 +45,7 @@ services:
     command: npm run start:debug
     environment:
       - NATS_SERVER=nats://nats-server:4222
-      - PORT=${MAFCS_MS_AUTH_PORT}
+      - PORT=${MS_AUTH_PORT}
       - NODE_ENV=development
 
 
