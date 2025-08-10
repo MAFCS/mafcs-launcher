@@ -1,4 +1,4 @@
 [submodule "mafcs-ms-gateway"]
 	path = mafcs-ms-gateway
-	url = git@github.com:MAFCS/mafcs-ms-gateway.git
+	url = https://github.com/MAFCS/mafcs-ms-gateway.git
 	branch = dev
