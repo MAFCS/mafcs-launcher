@@ -2,3 +2,6 @@
 	path = mafcs-ms-gateway
 	url = https://github.com/MAFCS/mafcs-ms-gateway.git
 	branch = dev
+[submodule "mafcs-ms-auth"]
+	path = mafcs-ms-auth
+	url = https://github.com/MAFCS/mafcs-ms-auth.git
