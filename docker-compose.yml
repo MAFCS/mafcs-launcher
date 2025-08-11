@@ -1,5 +1,18 @@
 services:
   # =============================
+  # DATABASE
+  # =============================
+  db:
+    image: postgres:17.1-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+
+  # =============================
   # NATS SERVER
   # =============================
   nats-server:
@@ -47,8 +60,6 @@ services:
       - NATS_SERVER=nats://nats-server:4222
       - PORT=${MS_AUTH_PORT}
       - NODE_ENV=development
-
-
 
 volumes:
   mafcs-ms-gateway-node_modules:
