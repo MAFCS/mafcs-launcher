@@ -41,6 +41,7 @@ services:
       - NATS_SERVER=nats://nats-server:4222
       - PORT=${MS_GATEWAY_PORT}
       - NODE_ENV=development
+      - DATABASE_URL=${MS_GATEWAY_DATABASE_URL}
 
   # =============================
   # MAFCS MS AUTH
@@ -60,6 +61,7 @@ services:
       - NATS_SERVER=nats://nats-server:4222
       - PORT=${MS_AUTH_PORT}
       - NODE_ENV=development
+      - DATABASE_URL=${MS_AUTH_DATABASE_URL}
 
 volumes:
   mafcs-ms-gateway-node_modules:
